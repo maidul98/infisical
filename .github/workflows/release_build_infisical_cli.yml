@@ -12,10 +12,8 @@ permissions:
     contents: write
 
 jobs:
-
     goreleaser:
         runs-on: ubuntu-latest
-        needs: [cli-integration-tests]
         steps:
             - uses: actions/checkout@v3
               with:

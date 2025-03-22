@@ -39,9 +39,10 @@ jobs:
                   git clone https://github.com/plentico/osxcross-target.git ../../osxcross/target
             - uses: goreleaser/goreleaser-action@v4
               with:
-                  distribution: goreleaser-pro
-                  version: v1.26.2-pro
-                  args: release --clean
+                distribution: goreleaser
+                # 'latest', 'nightly', or a semver
+                version: 'latest'
+                args: release --clean
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - uses: actions/setup-python@v4
